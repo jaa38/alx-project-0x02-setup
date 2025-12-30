@@ -12,7 +12,7 @@ const Header = () => {
           About
         </Link>
 
-        <Link href='posts' className='font-medium text-blue-600'>
+        <Link href='/posts' className='font-medium text-blue-600'>
           Posts
         </Link>
       </nav>
