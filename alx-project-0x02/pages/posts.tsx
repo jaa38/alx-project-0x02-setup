@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
-import Header from '@/components/layout/Header';
-import PostCard from '@/components/common/PostCard';
-import { type PostProps } from '@/interfaces';
+import Header from '../components/layout/Header';
+import PostCard from '../components/common/PostCard';
+import { type PostProps } from '../interfaces';
 
-interface PostPageProps {
+interface PostsPageProps {
   posts: PostProps[];
 }
 
-const PostsPage = ({ posts }: PostPageProps) => {
+const PostsPage = ({ posts }: PostsPageProps) => {
   return (
     <>
       <Header />
@@ -34,14 +33,14 @@ export const getStaticProps = async () => {
   const posts = data.slice(0, 10).map((post: any) => ({
     title: post.title,
     content: post.body,
-    userId: post.userID,
+    userId: post.userId,
   }));
 
   return {
     props: {
-      posts
-    }
-  }
+      posts,
+    },
+  };
 };
 
 export default PostsPage;
